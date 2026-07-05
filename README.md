@@ -1,17 +1,19 @@
-# The Trendify AI Portfolio
+# Turki Portfolio
 
-Lightweight public portfolio website for **The Trendify AI**.
+A lightweight public portfolio for **Turki**, the builder behind **The Trendify AI**.
 
 ## Purpose
 
-This repository hosts a simple static landing page while the full Trendify AI platform and automation systems are being prepared.
+This repository hosts a simple personal portfolio that introduces Turki, his work areas, and his current focus while the full Trendify AI platform is being prepared.
 
-## Current sections
+## Focus areas
 
-- Content Publishing Automation
-- Universal Project Builder
-- Trendify AI Tools
-- Public contact links
+- AI automation systems
+- Content publishing workflows
+- E-commerce intelligence tools
+- Digital products and templates
+- Writing and research
+- Governed project building
 
 ## Custom domain
 
