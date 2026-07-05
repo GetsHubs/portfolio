@@ -1,10 +1,10 @@
-# Turki Portfolio
+# Abu&#32;Battal Portfolio
 
-A lightweight public portfolio for **Turki**, the builder behind **The Trendify AI**.
+A lightweight public portfolio for **Abu&#32;Battal**, the builder behind **The Trendify AI**.
 
 ## Purpose
 
-This repository hosts a simple personal portfolio that introduces Turki, his work areas, and his current focus while the full Trendify AI platform is being prepared.
+This repository hosts a simple personal portfolio that introduces Abu&#32;Battal, his work areas, and his current focus while the full Trendify AI platform is being prepared.
 
 ## Focus areas
 
