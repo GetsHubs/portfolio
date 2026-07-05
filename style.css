@@ -1,21 +1,16 @@
-:root {
-  color-scheme: dark;
-  --bg: #15130f;
-  --surface: #1d1a15;
-  --surface-soft: #252018;
-  --surface-light: #2d261d;
-  --text: #f4efe6;
-  --muted: #bdb2a2;
-  --soft: #8f8375;
-  --line: rgba(244, 239, 230, 0.13);
-  --accent: #b9975b;
-  --accent-soft: #d8c7a4;
-  --teal: #7ca79a;
-  --shadow: 0 26px 80px rgba(0, 0, 0, 0.32);
-}
-
 * {
   box-sizing: border-box;
+}
+
+:root {
+  --bg: #f4efe7;
+  --paper: #fffaf1;
+  --paper-2: #efe6d8;
+  --ink: #171411;
+  --muted: #6e6459;
+  --line: #d8cabb;
+  --accent: #795b34;
+  --accent-2: #2f5d56;
 }
 
 html {
@@ -24,43 +19,27 @@ html {
 }
 
 body {
-  min-height: 100%;
   margin: 0;
-  font-family: ui-serif, Georgia, "Times New Roman", serif;
-  color: var(--text);
-  background:
-    linear-gradient(180deg, rgba(21, 19, 15, 0.95), rgba(21, 19, 15, 1)),
-    radial-gradient(circle at top left, rgba(185, 151, 91, 0.12), transparent 32%),
-    radial-gradient(circle at bottom right, rgba(124, 167, 154, 0.08), transparent 34%);
+  color: var(--ink);
+  background: var(--bg);
+  font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
 }
 
-body::before {
-  content: "";
-  position: fixed;
-  inset: 0;
-  pointer-events: none;
-  opacity: 0.34;
-  background-image: linear-gradient(rgba(255, 255, 255, 0.03) 1px, transparent 1px);
-  background-size: 100% 8px;
-  mask-image: linear-gradient(to bottom, black 0%, transparent 80%);
+a {
+  color: inherit;
 }
 
 .site-header {
-  position: sticky;
-  top: 0;
-  z-index: 10;
-  width: min(1120px, calc(100% - 32px));
+  max-width: 1120px;
   margin: 0 auto;
-  padding: 24px 0 14px;
+  padding: 28px 24px;
   display: flex;
-  justify-content: space-between;
   align-items: center;
-  backdrop-filter: blur(18px);
+  justify-content: space-between;
+  border-bottom: 1px solid var(--line);
 }
 
 .brand {
-  color: var(--text);
-  font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
   font-weight: 800;
   letter-spacing: -0.03em;
   text-decoration: none;
@@ -68,46 +47,56 @@ body::before {
 
 .site-nav {
   display: flex;
-  gap: 20px;
+  gap: 22px;
   align-items: center;
 }
 
 .site-nav a {
   color: var(--muted);
-  font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-  font-size: 0.92rem;
+  font-size: 0.95rem;
+  font-weight: 600;
   text-decoration: none;
 }
 
 .site-nav a:hover {
-  color: var(--text);
+  color: var(--ink);
 }
 
 .page-shell {
-  width: min(1120px, calc(100% - 32px));
+  max-width: 1120px;
   margin: 0 auto;
-  padding: 56px 0 64px;
+  padding: 0 24px 64px;
 }
 
 .hero {
-  min-height: 68vh;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  border-top: 1px solid var(--line);
+  display: grid;
+  grid-template-columns: minmax(0, 1.1fr) minmax(280px, 0.65fr);
+  gap: 48px;
+  align-items: end;
+  padding: 92px 0 74px;
   border-bottom: 1px solid var(--line);
-  padding: clamp(56px, 9vw, 120px) 0;
+}
+
+.hero::after {
+  content: "Current focus\A\AThe Trendify AI is being prepared as a practical home for automation tools, digital commerce systems, writing, research, and digital products.";
+  white-space: pre-line;
+  display: block;
+  padding: 28px;
+  border: 1px solid var(--line);
+  background: var(--paper);
+  color: var(--muted);
+  font-size: 1rem;
+  line-height: 1.7;
 }
 
 .kicker,
 .section-label,
 .card span {
-  margin: 0 0 18px;
-  color: var(--accent-soft);
-  font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  margin: 0 0 16px;
+  color: var(--accent);
   font-size: 0.78rem;
   font-weight: 800;
-  letter-spacing: 0.16em;
+  letter-spacing: 0.14em;
   text-transform: uppercase;
 }
 
@@ -118,28 +107,30 @@ p {
   margin-top: 0;
 }
 
+h1,
+h2,
+h3 {
+  font-family: ui-serif, Georgia, "Times New Roman", serif;
+}
+
 h1 {
-  max-width: 920px;
-  margin-bottom: 22px;
-  color: var(--text);
-  font-size: clamp(3.4rem, 9vw, 7.4rem);
-  line-height: 0.96;
-  letter-spacing: -0.07em;
+  max-width: 800px;
+  margin-bottom: 24px;
+  font-size: clamp(4rem, 10vw, 8.5rem);
+  line-height: 0.9;
+  letter-spacing: -0.08em;
 }
 
 .hero__subtitle {
-  max-width: 760px;
-  margin-bottom: 22px;
-  color: var(--accent);
-  font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-  font-size: clamp(1rem, 2vw, 1.25rem);
-  font-weight: 700;
-  letter-spacing: 0.01em;
+  margin-bottom: 20px;
+  color: var(--accent-2);
+  font-size: 1.05rem;
+  font-weight: 800;
 }
 
 .hero__lead {
-  max-width: 760px;
-  margin-bottom: 36px;
+  max-width: 700px;
+  margin-bottom: 34px;
   color: var(--muted);
   font-size: clamp(1.12rem, 2vw, 1.45rem);
   line-height: 1.75;
@@ -148,77 +139,72 @@ h1 {
 .hero__actions {
   display: flex;
   flex-wrap: wrap;
-  gap: 14px;
+  gap: 12px;
 }
 
 .button {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  min-height: 48px;
-  padding: 0 20px;
+  min-height: 46px;
+  padding: 0 18px;
+  border: 1px solid var(--ink);
   border-radius: 999px;
-  font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-  text-decoration: none;
   font-weight: 800;
-  transition: transform 180ms ease, border-color 180ms ease, background 180ms ease;
-}
-
-.button:hover {
-  transform: translateY(-2px);
+  text-decoration: none;
 }
 
 .button-primary {
-  color: #15130f;
-  background: var(--accent-soft);
+  color: var(--paper);
+  background: var(--ink);
 }
 
 .button-secondary {
-  color: var(--text);
-  border: 1px solid var(--line);
-  background: rgba(244, 239, 230, 0.04);
+  color: var(--ink);
+  background: transparent;
 }
 
 .section-block {
-  padding: 74px 0;
+  padding: 76px 0;
   border-bottom: 1px solid var(--line);
 }
 
 .section-block h2 {
   max-width: 780px;
-  margin-bottom: 20px;
-  font-size: clamp(2rem, 4vw, 3.6rem);
-  line-height: 1.05;
+  margin-bottom: 22px;
+  font-size: clamp(2rem, 4vw, 4rem);
+  line-height: 1.03;
   letter-spacing: -0.055em;
 }
 
 .section-block > p:not(.section-label),
 .intro p:last-child {
-  max-width: 770px;
+  max-width: 820px;
   color: var(--muted);
-  font-size: 1.15rem;
-  line-height: 1.8;
+  font-size: 1.14rem;
+  line-height: 1.85;
 }
 
 .cards {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 16px;
-  margin-top: 34px;
+  border-top: 1px solid var(--line);
+  border-left: 1px solid var(--line);
+  margin-top: 36px;
 }
 
 .card {
   min-height: 230px;
   padding: 28px;
-  border: 1px solid var(--line);
-  border-radius: 22px;
-  background: linear-gradient(180deg, rgba(244, 239, 230, 0.055), rgba(244, 239, 230, 0.025));
+  border-right: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+  background: rgba(255, 250, 241, 0.45);
 }
 
 .card h3,
 .project-list h3 {
   margin-bottom: 12px;
-  font-size: 1.35rem;
+  font-size: 1.45rem;
   line-height: 1.2;
   letter-spacing: -0.035em;
 }
@@ -227,22 +213,22 @@ h1 {
 .project-list p {
   margin-bottom: 0;
   color: var(--muted);
-  font-size: 1rem;
   line-height: 1.72;
 }
 
 .project-list {
   display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 16px;
-  margin-top: 34px;
+  grid-template-columns: 1fr;
+  margin-top: 36px;
+  border-top: 1px solid var(--line);
 }
 
 .project-list article {
-  padding: 26px;
-  border-radius: 22px;
-  background: var(--surface-soft);
-  border: 1px solid var(--line);
+  display: grid;
+  grid-template-columns: minmax(220px, 0.45fr) 1fr;
+  gap: 28px;
+  padding: 24px 0;
+  border-bottom: 1px solid var(--line);
 }
 
 .services-grid,
@@ -261,10 +247,9 @@ h1 {
   padding: 0 16px;
   border: 1px solid var(--line);
   border-radius: 999px;
-  color: var(--text);
-  background: rgba(244, 239, 230, 0.04);
-  font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-  font-size: 0.95rem;
+  background: var(--paper);
+  color: var(--ink);
+  font-weight: 700;
   text-decoration: none;
 }
 
@@ -272,48 +257,44 @@ h1 {
   border-bottom: 0;
 }
 
-.contact-links a:hover {
-  border-color: rgba(216, 199, 164, 0.52);
-  background: rgba(216, 199, 164, 0.08);
-}
-
-@media (max-width: 860px) {
+@media (max-width: 880px) {
   .site-header {
     align-items: flex-start;
-    gap: 16px;
     flex-direction: column;
+    gap: 14px;
   }
 
   .site-nav {
-    gap: 12px;
     flex-wrap: wrap;
-  }
-
-  .cards,
-  .project-list {
-    grid-template-columns: 1fr;
+    gap: 12px;
   }
 
   .hero {
-    min-height: auto;
+    grid-template-columns: 1fr;
+    padding-top: 64px;
+  }
+
+  .cards {
+    grid-template-columns: 1fr;
+  }
+
+  .project-list article {
+    grid-template-columns: 1fr;
   }
 }
 
 @media (max-width: 520px) {
-  .page-shell,
-  .site-header {
-    width: min(100% - 24px, 1120px);
-  }
-
-  .site-nav a {
-    font-size: 0.86rem;
+  .site-header,
+  .page-shell {
+    padding-left: 18px;
+    padding-right: 18px;
   }
 
   h1 {
-    font-size: clamp(3rem, 18vw, 4.7rem);
+    font-size: clamp(3.5rem, 20vw, 5rem);
   }
 
   .section-block {
-    padding: 54px 0;
+    padding: 56px 0;
   }
 }
