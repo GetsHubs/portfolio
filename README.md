@@ -1,10 +1,10 @@
-# Abu&#32;Battal Portfolio
+# The Trendify AI Portfolio
 
-A lightweight public portfolio for **Abu&#32;Battal**, the builder behind **The Trendify AI**.
+A lightweight public portfolio for **The Trendify AI**.
 
 ## Purpose
 
-This repository hosts a simple personal portfolio that introduces Abu&#32;Battal, his work areas, and his current focus while the full Trendify AI platform is being prepared.
+This repository hosts a simple editorial-style landing page that introduces The Trendify AI, its work areas, and its current focus while the full platform is being prepared.
 
 ## Focus areas
 
