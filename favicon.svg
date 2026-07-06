@@ -1,0 +1,8 @@
+﻿<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-labelledby="title desc">
+  <title id="title">The Trendify AI favicon</title>
+  <desc id="desc">A dark rounded square with a T monogram and small mint spark.</desc>
+  <rect width="64" height="64" rx="14" fill="#27262b"/>
+  <path d="M17 17h30v8H36v25h-8V25H17z" fill="#afa5e7"/>
+  <path d="M48 13l2.1 5.1L55 20l-4.9 1.9L48 27l-2.1-5.1L41 20l4.9-1.9z" fill="#a8e2ca"/>
+  <path d="M16 49h31v4H16z" fill="#e0c4f2" opacity=".9"/>
+</svg>

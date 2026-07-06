@@ -1,0 +1,77 @@
+﻿<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Contact Us | The Trendify AI</title>
+  <meta name="description" content="Contact The Trendify AI for project, collaboration, or business inquiries." />
+  <meta name="theme-color" content="#27262b" />
+  <meta property="og:title" content="Contact Us | The Trendify AI" />
+  <meta property="og:description" content="A secure-ready contact form for project, collaboration, or business inquiries." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://www.thetrendifyai.com/contact.html" />
+  <link rel="canonical" href="https://www.thetrendifyai.com/contact.html" />
+  <link rel="icon" type="image/svg+xml" href="./favicon.svg">
+  <link rel="stylesheet" href="./style.css?v=20260706-1" />
+</head>
+<body class="contact-page">
+  <a class="skip-link" href="#top">Skip to content</a>
+
+  <header class="site-header" aria-label="Contact page header">
+    <a class="brand" href="./index.html" aria-label="The Trendify AI home">The Trendify AI</a>
+    <nav class="site-nav" aria-label="Contact page navigation">
+      <a href="./index.html">Back to Home</a>
+    </nav>
+  </header>
+
+  <main id="top" class="contact-main section-wrap" tabindex="-1">
+    <section class="contact-panel" aria-labelledby="contact-page-title">
+      <div class="contact-intro">
+        <p class="section-label">Contact</p>
+        <h1 id="contact-page-title">Contact Us</h1>
+        <p>
+          Use this form for project, collaboration, or business inquiries.
+        </p>
+      </div>
+
+      <form class="contact-form" action="/api/contact" method="post" aria-describedby="contact-security-note contact-integration-note">
+        <div class="form-field form-field-hidden" aria-hidden="true">
+          <label for="company">Company</label>
+          <input id="company" name="company" type="text" autocomplete="off" tabindex="-1" />
+        </div>
+
+        <div class="form-field">
+          <label for="name">Name</label>
+          <input id="name" name="name" type="text" autocomplete="name" minlength="2" maxlength="120" required />
+        </div>
+
+        <div class="form-field">
+          <label for="email">Email</label>
+          <input id="email" name="email" type="email" autocomplete="email" maxlength="254" required />
+        </div>
+
+        <div class="form-field">
+          <label for="subject">Subject</label>
+          <input id="subject" name="subject" type="text" autocomplete="off" minlength="3" maxlength="160" required />
+        </div>
+
+        <div class="form-field">
+          <label for="message">Message</label>
+          <textarea id="message" name="message" autocomplete="off" minlength="10" maxlength="4000" required></textarea>
+        </div>
+
+        <p id="contact-security-note" class="form-note">
+          Please do not send passwords, API keys, payment details, or sensitive private information through this form.
+        </p>
+        <p id="contact-integration-note" class="form-note">
+          This form is handled by the site backend when the secure delivery endpoint is configured.
+        </p>
+
+        <div class="submit-row">
+          <button class="button button-primary" type="submit">Send Message</button>
+        </div>
+      </form>
+    </section>
+  </main>
+</body>
+</html>
