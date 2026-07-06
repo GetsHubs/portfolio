@@ -13,7 +13,6 @@
   <link rel="canonical" href="https://www.thetrendifyai.com/contact.html" />
   <link rel="icon" type="image/svg+xml" href="./favicon.svg">
   <link rel="stylesheet" href="./style.css?v=20260706-1" />
-  <script src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer></script>
 </head>
 <body class="contact-page">
   <a class="skip-link" href="#top">Skip to content</a>
@@ -35,7 +34,10 @@
         </p>
       </div>
 
-      <form class="contact-form" action="/api/contact" method="post" aria-describedby="contact-security-note contact-integration-note contact-protection-note">
+      <form class="contact-form" action="https://formsubmit.co/7f5848ab337abda45439b07775feb3fe" method="POST" aria-describedby="contact-security-note contact-integration-note contact-protection-note">
+        <input type="hidden" name="_subject" value="New message from The Trendify AI website">
+        <input type="hidden" name="_captcha" value="false">
+        <input type="hidden" name="_template" value="table">
         <div class="form-field form-field-hidden" aria-hidden="true">
           <label for="company">Company</label>
           <input id="company" name="company" type="text" autocomplete="off" tabindex="-1" />
@@ -65,15 +67,11 @@
           Please do not send passwords, API keys, payment details, or sensitive private information through this form.
         </p>
         <p id="contact-integration-note" class="form-note">
-          This form is handled by the Vercel contact endpoint when secure delivery is configured.
+          This form is currently routed through a temporary secure email delivery service.
         </p>
         <p id="contact-protection-note" class="form-note form-note-protection">
-          This form is protected against automated spam.
+          This temporary form uses FormSubmit email delivery while the final protected backend endpoint is being configured.
         </p>
-
-        <div class="turnstile-wrap">
-          <div class="cf-turnstile" data-sitekey="0x4AAAAAADwhunSe90su_4G9"></div>
-        </div>
 
         <div class="submit-row">
           <button class="button button-primary" type="submit">Send Message</button>
