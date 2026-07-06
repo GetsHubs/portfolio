@@ -5156,3 +5156,54 @@ p.card-status {
     animation: none;
   }
 }
+
+/* Temporary hero visual alignment refinement */
+.premium-transformation-scene {
+  grid-template-columns: minmax(118px, 0.88fr) minmax(160px, 1fr) minmax(168px, 1fr);
+  padding-inline: clamp(6px, 1.2vw, 14px) clamp(22px, 2.8vw, 36px);
+  transform: translateX(clamp(-16px, -1vw, -8px));
+}
+
+.premium-transformation-scene .transformation-flow {
+  inset: 6% 5% 2% -2%;
+  width: 97%;
+}
+
+.premium-transformation-scene .scene-glow-right {
+  right: 1%;
+}
+
+.premium-transformation-scene .output-products-stage {
+  justify-self: stretch;
+  max-width: min(100%, 280px);
+}
+
+@media (max-width: 900px) {
+  .premium-transformation-scene {
+    grid-template-columns: minmax(96px, 0.84fr) minmax(132px, 0.98fr) minmax(134px, 1fr);
+    padding-inline: 4px clamp(16px, 3vw, 26px);
+    transform: translateX(clamp(-10px, -1vw, -6px));
+  }
+
+  .premium-transformation-scene .transformation-flow {
+    inset: 8% 4% 2% -2%;
+    width: 98%;
+  }
+}
+
+@media (max-width: 680px) {
+  .premium-transformation-scene {
+    grid-template-columns: minmax(54px, 0.72fr) minmax(90px, 1fr) minmax(78px, 0.96fr);
+    padding-inline: 1px clamp(10px, 3vw, 16px);
+    transform: translateX(-4px);
+  }
+
+  .premium-transformation-scene .transformation-flow {
+    inset: 10% 2% 3% -3%;
+    width: 101%;
+  }
+
+  .premium-transformation-scene .output-products-stage {
+    max-width: 100%;
+  }
+}
