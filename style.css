@@ -5178,6 +5178,25 @@ p.card-status {
   max-width: min(100%, 280px);
 }
 
+@media (min-width: 901px) and (max-width: 1120px) {
+  .premium-transformation-scene {
+    grid-template-columns: minmax(96px, 0.8fr) minmax(136px, 0.98fr) minmax(132px, 1fr);
+    gap: 8px;
+    padding-inline: 2px clamp(22px, 3vw, 32px);
+    transform: translateX(-6px) scale(0.96);
+    transform-origin: center;
+  }
+
+  .premium-transformation-scene .transformation-flow {
+    inset: 8% 5% 2% -2%;
+    width: 97%;
+  }
+
+  .premium-transformation-scene .output-products-stage {
+    max-width: min(100%, 250px);
+  }
+}
+
 @media (max-width: 900px) {
   .premium-transformation-scene {
     grid-template-columns: minmax(96px, 0.84fr) minmax(132px, 0.98fr) minmax(134px, 1fr);
