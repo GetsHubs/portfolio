@@ -3273,3 +3273,39 @@ body {
     padding: 14px 14px 14px 0;
   }
 }
+
+.project-card,
+.card {
+  position: relative;
+}
+
+.corner-status-badge {
+  position: absolute;
+  z-index: 3;
+  top: 12px;
+  right: 12px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  max-width: calc(100% - 24px);
+  margin: 0;
+  border: 1px solid color-mix(in srgb, var(--accent-cool) 55%, var(--border-strong));
+  border-radius: 999px;
+  background: color-mix(in srgb, var(--bg) 36%, var(--surface-rich));
+  box-shadow: 0 8px 18px color-mix(in srgb, var(--bg) 46%, transparent);
+  color: var(--accent-cool);
+  font-size: 10px;
+  font-weight: 900;
+  letter-spacing: 0.06em;
+  line-height: 1;
+  padding: 7px 10px;
+  text-transform: uppercase;
+  white-space: nowrap;
+  pointer-events: none;
+}
+
+[dir="rtl"] .corner-status-badge {
+  right: auto;
+  left: 12px;
+  letter-spacing: 0;
+}
