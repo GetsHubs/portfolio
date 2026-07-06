@@ -3251,3 +3251,25 @@ body {
     transform: none;
   }
 }
+
+/* Scoped RTL support for the Arabic homepage */
+[dir="rtl"] body {
+  text-align: right;
+}
+
+[dir="rtl"] .site-nav {
+  justify-content: flex-start;
+}
+
+[dir="rtl"] #projects .section-heading-row {
+  border-left: 0;
+  border-right: 3px solid var(--accent-cool);
+  background: linear-gradient(270deg, color-mix(in srgb, var(--surface-rich) 34%, transparent), transparent 88%);
+  padding: clamp(18px, 3vw, 26px) clamp(18px, 3vw, 26px) clamp(18px, 3vw, 26px) 0;
+}
+
+@media (max-width: 680px) {
+  [dir="rtl"] #projects .section-heading-row {
+    padding: 14px 14px 14px 0;
+  }
+}
