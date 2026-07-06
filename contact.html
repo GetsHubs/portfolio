@@ -13,6 +13,7 @@
   <link rel="canonical" href="https://www.thetrendifyai.com/contact.html" />
   <link rel="icon" type="image/svg+xml" href="./favicon.svg">
   <link rel="stylesheet" href="./style.css?v=20260706-1" />
+  <script src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer></script>
 </head>
 <body class="contact-page">
   <a class="skip-link" href="#top">Skip to content</a>
@@ -34,7 +35,7 @@
         </p>
       </div>
 
-      <form class="contact-form" action="/api/contact" method="post" aria-describedby="contact-security-note contact-integration-note">
+      <form class="contact-form" action="/api/contact" method="post" aria-describedby="contact-security-note contact-integration-note contact-protection-note">
         <div class="form-field form-field-hidden" aria-hidden="true">
           <label for="company">Company</label>
           <input id="company" name="company" type="text" autocomplete="off" tabindex="-1" />
@@ -47,25 +48,32 @@
 
         <div class="form-field">
           <label for="email">Email</label>
-          <input id="email" name="email" type="email" autocomplete="email" maxlength="254" required />
+          <input id="email" name="email" type="email" autocomplete="email" maxlength="180" required />
         </div>
 
         <div class="form-field">
           <label for="subject">Subject</label>
-          <input id="subject" name="subject" type="text" autocomplete="off" minlength="3" maxlength="160" required />
+          <input id="subject" name="subject" type="text" autocomplete="off" minlength="3" maxlength="180" required />
         </div>
 
         <div class="form-field">
           <label for="message">Message</label>
-          <textarea id="message" name="message" autocomplete="off" minlength="10" maxlength="4000" required></textarea>
+          <textarea id="message" name="message" autocomplete="off" minlength="10" maxlength="3000" required></textarea>
         </div>
 
         <p id="contact-security-note" class="form-note">
           Please do not send passwords, API keys, payment details, or sensitive private information through this form.
         </p>
         <p id="contact-integration-note" class="form-note">
-          This form is handled by the site backend when the secure delivery endpoint is configured.
+          This form is handled by the Vercel contact endpoint when secure delivery is configured.
         </p>
+        <p id="contact-protection-note" class="form-note form-note-protection">
+          This form is protected against automated spam.
+        </p>
+
+        <div class="turnstile-wrap">
+          <div class="cf-turnstile" data-sitekey="0x4AAAAAADwhunSe90su_4G9"></div>
+        </div>
 
         <div class="submit-row">
           <button class="button button-primary" type="submit">Send Message</button>

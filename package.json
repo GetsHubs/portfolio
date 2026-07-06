@@ -1,0 +1,11 @@
+{
+  "name": "the-trendify-ai-portfolio",
+  "version": "1.0.0",
+  "private": true,
+  "engines": {
+    "node": ">=18"
+  },
+  "scripts": {
+    "check:api": "node --check api/contact.js"
+  }
+}
