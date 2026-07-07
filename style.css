@@ -5226,3 +5226,132 @@ p.card-status {
     max-width: 100%;
   }
 }
+
+/* Site integration pass */
+body:has(main > .hero.section-wrap) {
+  background:
+    radial-gradient(ellipse at 8% 13%, color-mix(in srgb, var(--accent) 20%, transparent), transparent 40rem),
+    radial-gradient(ellipse at 92% 36%, color-mix(in srgb, var(--accent-cool) 17%, transparent), transparent 42rem),
+    radial-gradient(ellipse at 48% 68%, color-mix(in srgb, var(--deep-accent) 30%, transparent), transparent 54rem),
+    linear-gradient(90deg, color-mix(in srgb, var(--deep-accent) 16%, transparent), transparent 34%, color-mix(in srgb, var(--accent-cool) 7%, transparent) 74%, transparent),
+    linear-gradient(
+      180deg,
+      var(--bg) 0%,
+      color-mix(in srgb, var(--surface) 30%, var(--bg)) 22%,
+      color-mix(in srgb, var(--surface-deep) 34%, var(--bg)) 50%,
+      color-mix(in srgb, var(--deep-accent) 20%, var(--bg)) 76%,
+      var(--bg) 100%
+    );
+}
+
+main:has(> .hero.section-wrap) {
+  position: relative;
+  isolation: isolate;
+}
+
+main:has(> .hero.section-wrap)::before {
+  content: "";
+  position: absolute;
+  inset: clamp(140px, 16vw, 220px) 0 0;
+  z-index: -1;
+  pointer-events: none;
+  background:
+    linear-gradient(180deg, transparent 0%, color-mix(in srgb, var(--surface-rich) 12%, transparent) 18%, transparent 39%, color-mix(in srgb, var(--accent-cool) 9%, transparent) 70%, transparent 100%),
+    radial-gradient(ellipse at 14% 45%, color-mix(in srgb, var(--accent) 13%, transparent), transparent 32rem),
+    radial-gradient(ellipse at 86% 70%, color-mix(in srgb, var(--accent-cool) 12%, transparent), transparent 34rem);
+}
+
+main > .hero.section-wrap ~ .section-wrap {
+  padding-top: clamp(34px, 3.8vw, 50px);
+}
+
+main > .hero.section-wrap ~ #projects {
+  margin-bottom: clamp(14px, 2.6vw, 28px);
+}
+
+main > .hero.section-wrap {
+  border-color: color-mix(in srgb, var(--accent-cool) 22%, transparent);
+  background:
+    linear-gradient(135deg, color-mix(in srgb, var(--surface) 68%, transparent) 0%, color-mix(in srgb, var(--surface-rich) 44%, transparent) 54%, color-mix(in srgb, var(--surface-deep) 54%, transparent) 100%),
+    linear-gradient(90deg, color-mix(in srgb, var(--accent) 8%, transparent), transparent 38%, color-mix(in srgb, var(--accent-cool) 7%, transparent));
+  box-shadow:
+    inset 0 1px 0 color-mix(in srgb, var(--text) 7%, transparent),
+    0 20px 48px color-mix(in srgb, var(--bg) 42%, transparent);
+}
+
+main > .hero.section-wrap ~ .about.section-wrap,
+main > .hero.section-wrap ~ #services.services.section-wrap,
+main > .hero.section-wrap ~ #contact.contact.section-wrap {
+  position: relative;
+  overflow: visible;
+  border-color: transparent;
+  background: transparent;
+  box-shadow: none;
+}
+
+main > .hero.section-wrap ~ .about.section-wrap::before,
+main > .hero.section-wrap ~ #services.services.section-wrap::before,
+main > .hero.section-wrap ~ #contact.contact.section-wrap::before {
+  content: "";
+  position: absolute;
+  inset: -16px -22px;
+  z-index: 0;
+  pointer-events: none;
+  border-radius: calc(var(--radius) + 12px);
+  background:
+    radial-gradient(ellipse at 8% 48%, color-mix(in srgb, var(--accent) 8%, transparent), transparent 54%),
+    radial-gradient(ellipse at 88% 58%, color-mix(in srgb, var(--accent-cool) 7%, transparent), transparent 56%),
+    linear-gradient(90deg, color-mix(in srgb, var(--surface-rich) 7%, transparent), transparent 46%, color-mix(in srgb, var(--surface-deep) 6%, transparent));
+}
+
+main > .hero.section-wrap ~ .about.section-wrap > *,
+main > .hero.section-wrap ~ #services.services.section-wrap > *,
+main > .hero.section-wrap ~ #contact.contact.section-wrap > * {
+  position: relative;
+  z-index: 1;
+}
+
+main > .hero.section-wrap ~ .about.section-wrap {
+  margin-top: clamp(12px, 2vw, 22px);
+  background: transparent;
+}
+
+main > .hero.section-wrap ~ .about.section-wrap::before {
+  background:
+    radial-gradient(ellipse at 12% 46%, color-mix(in srgb, var(--accent) 8%, transparent), transparent 54%),
+    linear-gradient(90deg, transparent, color-mix(in srgb, var(--surface-rich) 7%, transparent), transparent 72%);
+}
+
+main > .hero.section-wrap ~ #services.services.section-wrap {
+  margin-top: clamp(12px, 2vw, 22px);
+  margin-bottom: clamp(12px, 2vw, 22px);
+  background: transparent;
+}
+
+main > .hero.section-wrap ~ #services.services.section-wrap::before {
+  background:
+    radial-gradient(ellipse at 86% 50%, color-mix(in srgb, var(--accent-cool) 8%, transparent), transparent 54%),
+    linear-gradient(90deg, transparent, color-mix(in srgb, var(--surface-deep) 7%, transparent), transparent);
+}
+
+main > .hero.section-wrap ~ #contact.contact.section-wrap {
+  margin-top: clamp(12px, 2vw, 22px);
+  border-color: transparent;
+  background: transparent;
+}
+
+main > .hero.section-wrap ~ #contact.contact.section-wrap::before {
+  background:
+    radial-gradient(ellipse at 82% 48%, color-mix(in srgb, var(--accent-cool) 9%, transparent), transparent 56%),
+    linear-gradient(90deg, color-mix(in srgb, var(--deep-accent) 8%, transparent), transparent 62%);
+}
+
+main > .hero.section-wrap ~ #projects .section-heading-row {
+  border-left-color: color-mix(in srgb, var(--accent-cool) 28%, transparent);
+  background: linear-gradient(90deg, color-mix(in srgb, var(--surface-rich) 10%, transparent), transparent 82%);
+}
+
+[dir="rtl"] main > .hero.section-wrap ~ #projects .section-heading-row {
+  border-right-color: color-mix(in srgb, var(--accent-cool) 28%, transparent);
+  background: linear-gradient(270deg, color-mix(in srgb, var(--surface-rich) 10%, transparent), transparent 82%);
+}
