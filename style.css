@@ -5230,16 +5230,16 @@ p.card-status {
 /* Site integration pass */
 body:has(main > .hero.section-wrap) {
   background:
-    radial-gradient(ellipse at 8% 13%, color-mix(in srgb, var(--accent) 20%, transparent), transparent 40rem),
-    radial-gradient(ellipse at 92% 36%, color-mix(in srgb, var(--accent-cool) 17%, transparent), transparent 42rem),
-    radial-gradient(ellipse at 48% 68%, color-mix(in srgb, var(--deep-accent) 30%, transparent), transparent 54rem),
-    linear-gradient(90deg, color-mix(in srgb, var(--deep-accent) 16%, transparent), transparent 34%, color-mix(in srgb, var(--accent-cool) 7%, transparent) 74%, transparent),
+    radial-gradient(ellipse at 8% 13%, color-mix(in srgb, var(--accent) 12%, transparent), transparent 36rem),
+    radial-gradient(ellipse at 92% 36%, color-mix(in srgb, var(--accent-cool) 9%, transparent), transparent 38rem),
+    radial-gradient(ellipse at 48% 68%, color-mix(in srgb, var(--deep-accent) 18%, transparent), transparent 48rem),
+    linear-gradient(90deg, color-mix(in srgb, var(--deep-accent) 9%, transparent), transparent 34%, color-mix(in srgb, var(--accent-cool) 4%, transparent) 74%, transparent),
     linear-gradient(
       180deg,
       var(--bg) 0%,
-      color-mix(in srgb, var(--surface) 30%, var(--bg)) 22%,
-      color-mix(in srgb, var(--surface-deep) 34%, var(--bg)) 50%,
-      color-mix(in srgb, var(--deep-accent) 20%, var(--bg)) 76%,
+      color-mix(in srgb, var(--surface) 24%, var(--bg)) 22%,
+      color-mix(in srgb, var(--surface-deep) 28%, var(--bg)) 50%,
+      color-mix(in srgb, var(--deep-accent) 13%, var(--bg)) 76%,
       var(--bg) 100%
     );
 }
@@ -5256,9 +5256,9 @@ main:has(> .hero.section-wrap)::before {
   z-index: -1;
   pointer-events: none;
   background:
-    linear-gradient(180deg, transparent 0%, color-mix(in srgb, var(--surface-rich) 12%, transparent) 18%, transparent 39%, color-mix(in srgb, var(--accent-cool) 9%, transparent) 70%, transparent 100%),
-    radial-gradient(ellipse at 14% 45%, color-mix(in srgb, var(--accent) 13%, transparent), transparent 32rem),
-    radial-gradient(ellipse at 86% 70%, color-mix(in srgb, var(--accent-cool) 12%, transparent), transparent 34rem);
+    linear-gradient(180deg, transparent 0%, color-mix(in srgb, var(--surface-rich) 6%, transparent) 18%, transparent 39%, color-mix(in srgb, var(--accent-cool) 4%, transparent) 70%, transparent 100%),
+    radial-gradient(ellipse at 14% 45%, color-mix(in srgb, var(--accent) 7%, transparent), transparent 30rem),
+    radial-gradient(ellipse at 86% 70%, color-mix(in srgb, var(--accent-cool) 6%, transparent), transparent 32rem);
 }
 
 main > .hero.section-wrap ~ .section-wrap {
@@ -5299,9 +5299,9 @@ main > .hero.section-wrap ~ #contact.contact.section-wrap::before {
   pointer-events: none;
   border-radius: calc(var(--radius) + 12px);
   background:
-    radial-gradient(ellipse at 8% 48%, color-mix(in srgb, var(--accent) 8%, transparent), transparent 54%),
-    radial-gradient(ellipse at 88% 58%, color-mix(in srgb, var(--accent-cool) 7%, transparent), transparent 56%),
-    linear-gradient(90deg, color-mix(in srgb, var(--surface-rich) 7%, transparent), transparent 46%, color-mix(in srgb, var(--surface-deep) 6%, transparent));
+    radial-gradient(ellipse at 8% 48%, color-mix(in srgb, var(--accent) 4%, transparent), transparent 54%),
+    radial-gradient(ellipse at 88% 58%, color-mix(in srgb, var(--accent-cool) 4%, transparent), transparent 56%),
+    linear-gradient(90deg, color-mix(in srgb, var(--surface-rich) 4%, transparent), transparent 46%, color-mix(in srgb, var(--surface-deep) 3%, transparent));
 }
 
 main > .hero.section-wrap ~ .about.section-wrap > *,
@@ -5318,8 +5318,8 @@ main > .hero.section-wrap ~ .about.section-wrap {
 
 main > .hero.section-wrap ~ .about.section-wrap::before {
   background:
-    radial-gradient(ellipse at 12% 46%, color-mix(in srgb, var(--accent) 8%, transparent), transparent 54%),
-    linear-gradient(90deg, transparent, color-mix(in srgb, var(--surface-rich) 7%, transparent), transparent 72%);
+    radial-gradient(ellipse at 12% 46%, color-mix(in srgb, var(--accent) 4%, transparent), transparent 54%),
+    linear-gradient(90deg, transparent, color-mix(in srgb, var(--surface-rich) 4%, transparent), transparent 72%);
 }
 
 main > .hero.section-wrap ~ #services.services.section-wrap {
@@ -5330,8 +5330,8 @@ main > .hero.section-wrap ~ #services.services.section-wrap {
 
 main > .hero.section-wrap ~ #services.services.section-wrap::before {
   background:
-    radial-gradient(ellipse at 86% 50%, color-mix(in srgb, var(--accent-cool) 8%, transparent), transparent 54%),
-    linear-gradient(90deg, transparent, color-mix(in srgb, var(--surface-deep) 7%, transparent), transparent);
+    radial-gradient(ellipse at 86% 50%, color-mix(in srgb, var(--accent-cool) 4%, transparent), transparent 54%),
+    linear-gradient(90deg, transparent, color-mix(in srgb, var(--surface-deep) 4%, transparent), transparent);
 }
 
 main > .hero.section-wrap ~ #contact.contact.section-wrap {
@@ -5342,8 +5342,8 @@ main > .hero.section-wrap ~ #contact.contact.section-wrap {
 
 main > .hero.section-wrap ~ #contact.contact.section-wrap::before {
   background:
-    radial-gradient(ellipse at 82% 48%, color-mix(in srgb, var(--accent-cool) 9%, transparent), transparent 56%),
-    linear-gradient(90deg, color-mix(in srgb, var(--deep-accent) 8%, transparent), transparent 62%);
+    radial-gradient(ellipse at 82% 48%, color-mix(in srgb, var(--accent-cool) 5%, transparent), transparent 56%),
+    linear-gradient(90deg, color-mix(in srgb, var(--deep-accent) 4%, transparent), transparent 62%);
 }
 
 main > .hero.section-wrap ~ #projects .section-heading-row {
@@ -5354,4 +5354,312 @@ main > .hero.section-wrap ~ #projects .section-heading-row {
 [dir="rtl"] main > .hero.section-wrap ~ #projects .section-heading-row {
   border-right-color: color-mix(in srgb, var(--accent-cool) 28%, transparent);
   background: linear-gradient(270deg, color-mix(in srgb, var(--surface-rich) 10%, transparent), transparent 82%);
+}
+
+/* Temporary Work section operations visual */
+main > .hero.section-wrap ~ #work .section-heading-row {
+  position: relative;
+  isolation: isolate;
+  max-width: none;
+  min-height: clamp(220px, 25vw, 315px);
+  align-content: center;
+  padding-block: clamp(22px, 3vw, 34px);
+  padding-inline-end: min(46%, 560px);
+}
+
+main > .hero.section-wrap ~ #work .section-heading-row::before {
+  content: "";
+  position: absolute;
+  inset: -18px 0;
+  z-index: -1;
+  pointer-events: none;
+  border-radius: 0;
+  background:
+    linear-gradient(90deg, color-mix(in srgb, var(--bg) 98%, transparent) 0%, color-mix(in srgb, var(--bg) 82%, transparent) 34%, color-mix(in srgb, var(--bg) 30%, transparent) 64%, color-mix(in srgb, var(--bg) 12%, transparent) 82%, color-mix(in srgb, var(--bg) 58%, transparent) 100%),
+    linear-gradient(180deg, color-mix(in srgb, var(--bg) 94%, transparent), transparent 34%, transparent 66%, color-mix(in srgb, var(--bg) 90%, transparent)),
+    url("assets/work-operations-bg.png") right center / cover no-repeat;
+  filter: saturate(1.04) contrast(1.02);
+  opacity: 0.7;
+  -webkit-mask-image: radial-gradient(ellipse 78% 84% at 74% 50%, #000 0%, #000 40%, rgba(0, 0, 0, 0.74) 64%, transparent 96%);
+  mask-image: radial-gradient(ellipse 78% 84% at 74% 50%, #000 0%, #000 40%, rgba(0, 0, 0, 0.74) 64%, transparent 96%);
+}
+
+[dir="rtl"] main > .hero.section-wrap ~ #work .section-heading-row {
+  padding-inline-start: min(46%, 560px);
+  padding-inline-end: 0;
+}
+
+[dir="rtl"] main > .hero.section-wrap ~ #work .section-heading-row::before {
+  transform: scaleX(-1);
+}
+
+@media (max-width: 900px) {
+  main > .hero.section-wrap ~ #work .section-heading-row,
+  [dir="rtl"] main > .hero.section-wrap ~ #work .section-heading-row {
+    min-height: clamp(190px, 34vw, 260px);
+    padding-inline: 0;
+    padding-block: clamp(18px, 4vw, 28px);
+  }
+
+  main > .hero.section-wrap ~ #work .section-heading-row::before {
+    inset: -12px 0;
+    opacity: 0.48;
+  }
+}
+
+@media (max-width: 680px) {
+  main > .hero.section-wrap ~ #work .section-heading-row {
+    min-height: auto;
+  }
+
+  main > .hero.section-wrap ~ #work .section-heading-row::before {
+    opacity: 0.32;
+  }
+}
+
+/* Landing page commercial polish */
+body:has(main > .hero.section-wrap) > .site-header {
+  position: relative;
+  top: auto;
+  z-index: 20;
+  margin-top: 12px;
+  padding: 10px 12px;
+  border: 1px solid color-mix(in srgb, var(--border-strong) 24%, transparent);
+  border-radius: calc(var(--radius) + 4px);
+  background:
+    linear-gradient(90deg, color-mix(in srgb, var(--surface-rich) 16%, transparent), color-mix(in srgb, var(--surface-deep) 12%, transparent)),
+    color-mix(in srgb, var(--bg) 86%, transparent);
+  box-shadow: 0 12px 28px color-mix(in srgb, var(--bg) 30%, transparent);
+  backdrop-filter: blur(16px);
+}
+
+body:has(main > .hero.section-wrap) > .site-header .brand {
+  letter-spacing: 0;
+  min-height: 34px;
+  display: inline-flex;
+  align-items: center;
+}
+
+body:has(main > .hero.section-wrap) > .site-header .site-nav {
+  align-items: center;
+  gap: 5px;
+}
+
+body:has(main > .hero.section-wrap) > .site-header .site-nav a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 34px;
+  border: 1px solid transparent;
+  border-radius: 999px;
+  color: var(--text-soft);
+  padding: 7px 10px;
+}
+
+body:has(main > .hero.section-wrap) > .site-header .site-nav a:hover {
+  border-color: color-mix(in srgb, var(--accent-cool) 38%, transparent);
+  background: color-mix(in srgb, var(--surface-rich) 34%, transparent);
+  color: var(--text);
+}
+
+body:has(main > .hero.section-wrap) > .site-header .site-nav .header-cta {
+  border-color: color-mix(in srgb, var(--accent-cool) 40%, transparent);
+  background: color-mix(in srgb, var(--action) 24%, transparent);
+  color: var(--text);
+  padding-inline: 12px;
+}
+
+body:has(main > .hero.section-wrap) > .site-header .site-nav a[lang] {
+  width: 34px;
+  min-width: 34px;
+  border-color: color-mix(in srgb, var(--accent-cool) 28%, transparent);
+  background: color-mix(in srgb, var(--surface-rich) 22%, transparent);
+  padding-inline: 0;
+}
+
+main > .hero.section-wrap {
+  overflow: visible;
+  border-color: color-mix(in srgb, var(--accent-cool) 13%, transparent);
+  background:
+    linear-gradient(135deg, color-mix(in srgb, var(--surface) 40%, transparent), color-mix(in srgb, var(--surface-rich) 20%, transparent) 52%, color-mix(in srgb, var(--surface-deep) 24%, transparent)),
+    linear-gradient(90deg, color-mix(in srgb, var(--accent) 3%, transparent), transparent 42%, color-mix(in srgb, var(--accent-cool) 3%, transparent));
+  box-shadow:
+    inset 0 1px 0 color-mix(in srgb, var(--text) 5%, transparent),
+    0 18px 42px color-mix(in srgb, var(--bg) 24%, transparent),
+    0 0 54px color-mix(in srgb, var(--accent-cool) 5%, transparent);
+}
+
+main > .hero.section-wrap::before {
+  content: "";
+  position: absolute;
+  inset: -1px;
+  z-index: 0;
+  pointer-events: none;
+  border-radius: inherit;
+  background:
+    linear-gradient(180deg, color-mix(in srgb, var(--text) 4%, transparent), transparent 34%),
+    linear-gradient(90deg, color-mix(in srgb, var(--accent) 3%, transparent), transparent 48%, color-mix(in srgb, var(--accent-cool) 3%, transparent));
+  opacity: 0.5;
+}
+
+main > .hero.section-wrap::after {
+  content: "";
+  position: absolute;
+  inset: -44px -36px;
+  z-index: -1;
+  pointer-events: none;
+  border-radius: calc(var(--radius) + 34px);
+  background:
+    radial-gradient(ellipse at 16% 24%, color-mix(in srgb, var(--accent) 8%, transparent), transparent 45%),
+    radial-gradient(ellipse at 80% 55%, color-mix(in srgb, var(--accent-cool) 7%, transparent), transparent 48%);
+  opacity: 0.5;
+}
+
+main > .hero.section-wrap .hero-copy {
+  max-width: 660px;
+}
+
+main > .hero.section-wrap .kicker {
+  color: var(--accent-cool);
+}
+
+main > .hero.section-wrap .hero-subtitle {
+  max-width: 18ch;
+  color: var(--text);
+  font-size: clamp(23px, 2.7vw, 36px);
+  line-height: 1.12;
+  margin-bottom: 16px;
+}
+
+main > .hero.section-wrap .hero-lead {
+  color: color-mix(in srgb, var(--text-soft) 88%, var(--text));
+  font-size: clamp(16px, 1.25vw, 18px);
+}
+
+main > .hero.section-wrap .button-primary {
+  box-shadow: 0 12px 28px color-mix(in srgb, var(--action) 32%, transparent);
+}
+
+main > .hero.section-wrap ~ #projects {
+  padding-top: clamp(42px, 4.8vw, 64px);
+}
+
+#projects .section-label {
+  color: var(--accent-cool);
+}
+
+main > .hero.section-wrap ~ #projects .section-heading-row {
+  max-width: 980px;
+  border-left-color: color-mix(in srgb, var(--accent-cool) 58%, transparent);
+  background:
+    linear-gradient(90deg, color-mix(in srgb, var(--surface-rich) 18%, transparent), transparent 76%),
+    linear-gradient(180deg, color-mix(in srgb, var(--text) 4%, transparent), transparent);
+  padding-block: clamp(20px, 3.2vw, 30px);
+}
+
+#projects .featured-intent {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: clamp(16px, 2vw, 22px);
+}
+
+#projects .featured-intent span {
+  border: 1px solid color-mix(in srgb, var(--accent-cool) 30%, transparent);
+  border-radius: 999px;
+  background: color-mix(in srgb, var(--surface-rich) 20%, transparent);
+  color: var(--text-soft);
+  font-size: 13px;
+  font-weight: 800;
+  line-height: 1.2;
+  padding: 8px 11px;
+}
+
+#projects .section-heading-row h2 {
+  max-width: 760px;
+}
+
+#projects .section-heading-row p {
+  font-size: clamp(15px, 1.2vw, 17px);
+  line-height: 1.65;
+}
+
+@media (max-width: 900px) {
+  body:has(main > .hero.section-wrap) > .site-header {
+    margin-top: 8px;
+  }
+
+  main > .hero.section-wrap .hero-subtitle {
+    max-width: 24ch;
+  }
+}
+
+@media (max-width: 680px) {
+  body:has(main > .hero.section-wrap) {
+    overflow-x: hidden;
+  }
+
+  body:has(main > .hero.section-wrap) > .site-header,
+  body:has(main > .hero.section-wrap) main > .section-wrap {
+    width: calc(100vw - 32px);
+    max-width: calc(100vw - 32px);
+  }
+
+  body:has(main > .hero.section-wrap) > .site-header {
+    position: relative;
+    top: auto;
+    gap: 10px;
+    padding: 14px;
+  }
+
+  body:has(main > .hero.section-wrap) > .site-header .site-nav {
+    width: 100%;
+    gap: 3px;
+  }
+
+  body:has(main > .hero.section-wrap) > .site-header .site-nav a {
+    min-height: 34px;
+    font-size: 12.5px;
+    padding: 7px 6px;
+  }
+
+  body:has(main > .hero.section-wrap) > .site-header .site-nav a[lang] {
+    min-width: 30px;
+    padding-inline: 6px;
+  }
+
+  main > .hero.section-wrap {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  main > .hero.section-wrap .hero-copy,
+  main > .hero.section-wrap .hero-transformation-visual {
+    width: 100%;
+    max-width: 100%;
+    min-width: 0;
+  }
+
+  main > .hero.section-wrap .hero-subtitle {
+    max-width: 14ch;
+    font-size: clamp(20px, 5.4vw, 22px);
+    overflow-wrap: anywhere;
+    word-break: break-word;
+  }
+
+  main > .hero.section-wrap .hero-lead {
+    max-width: 32ch;
+    font-size: 15px;
+    overflow-wrap: anywhere;
+    word-break: break-word;
+  }
+
+  main > .hero.section-wrap .hero-actions {
+    width: 100%;
+  }
+
+  main > .hero.section-wrap .button {
+    flex: 1 1 100%;
+    min-width: 0;
+    padding-inline: 12px;
+  }
 }
