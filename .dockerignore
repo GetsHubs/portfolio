@@ -1,0 +1,11 @@
+.git
+.gitignore
+.env
+.env.example
+AGENTS.md
+README.md
+CNAME
+backups
+server.js
+Dockerfile
+compose.yaml

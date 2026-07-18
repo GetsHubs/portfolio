@@ -1,0 +1,24 @@
+services:
+  trendify-portfolio:
+    build:
+      context: .
+    container_name: trendify-portfolio
+    restart: unless-stopped
+    env_file:
+      - .env
+    networks:
+      - proxy
+    healthcheck:
+      test:
+        - CMD
+        - node
+        - -e
+        - fetch('http://127.0.0.1:8080/healthz').then(r=>process.exit(r.ok?0:1)).catch(()=>process.exit(1))
+      interval: 15s
+      timeout: 5s
+      retries: 5
+      start_period: 10s
+
+networks:
+  proxy:
+    external: true
