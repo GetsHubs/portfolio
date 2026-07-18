@@ -8,6 +8,7 @@ services:
       - .env
     networks:
       - proxy
+      - database
     healthcheck:
       test:
         - CMD
@@ -21,4 +22,6 @@ services:
 
 networks:
   proxy:
+    external: true
+  database:
     external: true

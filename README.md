@@ -42,8 +42,8 @@ Required environment variables:
 ```text
 CONTACT_FORM_WEBHOOK_URL
 TURNSTILE_SECRET_KEY
-UPSTASH_REDIS_REST_URL
-UPSTASH_REDIS_REST_TOKEN
+REDIS_HOST
+REDIS_PORT
 ```
 
 `CONTACT_FORM_WEBHOOK_TOKEN` is optional and should only be set when the receiving webhook requires bearer-token authentication.

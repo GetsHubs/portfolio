@@ -1,9 +1,10 @@
 const crypto = require("node:crypto");
+const net = require("node:net");
 
 const MAX_BODY_BYTES = 16 * 1024;
 const TURNSTILE_VERIFY_URL = "https://challenges.cloudflare.com/turnstile/v0/siteverify";
 const OUTBOUND_TIMEOUT_MS = 8000;
-const UPSTASH_TIMEOUT_MS = 4000;
+const REDIS_TIMEOUT_MS = 4000;
 const RATE_LIMIT_DEFAULTS = {
   windowSeconds: 600,
   maxAttempts: 5,
@@ -196,44 +197,147 @@ async function verifyTurnstile(token, req) {
 }
 
 function getRedisConfig() {
-  const url = clean(process.env.UPSTASH_REDIS_REST_URL).replace(/\/+$/, "");
-  const token = process.env.UPSTASH_REDIS_REST_TOKEN || "";
+  const host = clean(process.env.REDIS_HOST);
+  const port = Number.parseInt(process.env.REDIS_PORT || "", 10);
 
-  if (!url || !token) {
+  if (!host || !Number.isInteger(port) || port < 1 || port > 65535) {
     return null;
   }
 
-  return { url, token };
+  return { host, port };
 }
 
-async function redisCommand(redis, command) {
-  const controller = new AbortController();
-  const timeout = setTimeout(() => controller.abort(), UPSTASH_TIMEOUT_MS);
+function encodeRedisCommand(command) {
+  const parts = [`*${command.length}\r\n`];
 
-  try {
-    const response = await fetch(redis.url, {
-      method: "POST",
-      headers: {
-        Authorization: `Bearer ${redis.token}`,
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify(command),
-      signal: controller.signal,
+  for (const item of command) {
+    const value = String(item);
+    parts.push(`$${Buffer.byteLength(value, "utf8")}\r\n${value}\r\n`);
+  }
+
+  return parts.join("");
+}
+
+function parseRedisResponse(buffer) {
+  if (!buffer.length) {
+    return { complete: false };
+  }
+
+  const type = String.fromCharCode(buffer[0]);
+  const lineEnd = buffer.indexOf("\r\n");
+
+  if (lineEnd === -1) {
+    return { complete: false };
+  }
+
+  const line = buffer.subarray(1, lineEnd).toString("utf8");
+
+  if (type === "+") {
+    return { complete: true, value: line };
+  }
+
+  if (type === "-") {
+    throw new Error(`Redis error: ${line}`);
+  }
+
+  if (type === ":") {
+    const value = Number(line);
+    if (!Number.isFinite(value)) {
+      throw new Error("Invalid Redis integer response.");
+    }
+
+    return { complete: true, value };
+  }
+
+  if (type === "$") {
+    const length = Number.parseInt(line, 10);
+
+    if (length === -1) {
+      return { complete: true, value: null };
+    }
+
+    if (!Number.isInteger(length) || length < 0) {
+      throw new Error("Invalid Redis bulk response.");
+    }
+
+    const dataStart = lineEnd + 2;
+    const dataEnd = dataStart + length;
+
+    if (buffer.length < dataEnd + 2) {
+      return { complete: false };
+    }
+
+    if (buffer.subarray(dataEnd, dataEnd + 2).toString("utf8") !== "\r\n") {
+      throw new Error("Malformed Redis bulk response.");
+    }
+
+    return {
+      complete: true,
+      value: buffer.subarray(dataStart, dataEnd).toString("utf8"),
+    };
+  }
+
+  throw new Error("Unsupported Redis response type.");
+}
+
+function redisCommand(redis, command) {
+  return new Promise((resolve, reject) => {
+    const socket = net.createConnection({
+      host: redis.host,
+      port: redis.port,
     });
 
-    if (!response.ok) {
-      throw new Error("Redis command failed.");
-    }
+    let settled = false;
+    let responseBuffer = Buffer.alloc(0);
 
-    const data = await response.json().catch(() => null);
-    if (!data || data.error) {
-      throw new Error("Redis command failed.");
-    }
+    const finish = (error, value) => {
+      if (settled) {
+        return;
+      }
 
-    return data.result;
-  } finally {
-    clearTimeout(timeout);
-  }
+      settled = true;
+      socket.destroy();
+
+      if (error) {
+        reject(error);
+      } else {
+        resolve(value);
+      }
+    };
+
+    socket.setTimeout(REDIS_TIMEOUT_MS);
+
+    socket.on("connect", () => {
+      socket.write(encodeRedisCommand(command));
+    });
+
+    socket.on("data", (chunk) => {
+      responseBuffer = Buffer.concat([responseBuffer, chunk]);
+
+      try {
+        const parsed = parseRedisResponse(responseBuffer);
+        if (parsed.complete) {
+          finish(null, parsed.value);
+        }
+      } catch (error) {
+        finish(error);
+      }
+    });
+
+    socket.on("timeout", () => {
+      finish(new Error("Redis command timed out."));
+    });
+
+    socket.on("error", (error) => {
+      finish(error);
+    });
+
+    socket.on("end", () => {
+      if (!settled) {
+        finish(new Error("Redis connection ended before a complete response."));
+      }
+    });
+  });
 }
 
 function redisGet(redis, key) {
@@ -439,12 +543,27 @@ async function forwardSubmission(submission) {
 
     const response = await fetch(webhookUrl, {
       method: "POST",
-      headers,
+      headers: {
+        ...headers,
+        Accept: "application/json",
+        Origin: "https://thetrendifyai.com",
+        Referer: "https://thetrendifyai.com/contact.html",
+      },
       body: JSON.stringify(submission),
       signal: controller.signal,
     });
 
-    return { ok: response.ok, statusCode: response.ok ? 200 : 502 };
+    const result = await response.json().catch(() => null);
+    const accepted = response.ok && result && String(result.success).toLowerCase() === "true";
+
+    if (!accepted) {
+      console.error("FormSubmit rejected contact submission:", {
+        status: response.status,
+        message: result && result.message ? result.message : "Unknown response",
+      });
+    }
+
+    return { ok: accepted, statusCode: accepted ? 200 : 502 };
   } catch {
     return { ok: false, statusCode: 502 };
   } finally {
